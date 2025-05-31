@@ -90,7 +90,7 @@ function endGame(i) {
     divText = document.createTextNode(`Game Over, The Word Is ${randomValueValue}`)
   } else {
     document.getElementById("Winner").play()
-    divText = document.createTextNode(`We Have a Winner, The Word Is ${randomValueValue}`)
+    divText = document.createTextNode(`We Have a Winner`)
   }
 
   div.appendChild(divText)
