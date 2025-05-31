@@ -30,17 +30,18 @@ document.querySelector(".game-info .category span").innerHTML = randomPropName
 let lettersGuessContainer = document.querySelector(".letters-guess")
 let lettersAndSpace = Array.from(randomValueValue)
 
+let correctAttemps = 0
 lettersAndSpace.forEach(letter => {
   let emptySpan = document.createElement("span")
   if (letter === ' ') {
     emptySpan.className = 'with-space'
+    correctAttemps++;
   }
   lettersGuessContainer.appendChild(emptySpan)
 })
 
 let guessSpans = document.querySelectorAll(".letters-guess span")
 let wrongAttempts = 0
-let correctAttemps = 0
 let theDraw = document.querySelector(".hangman-draw")
 
 document.addEventListener("click", (e) => {
@@ -89,7 +90,7 @@ function endGame(i) {
     divText = document.createTextNode(`Game Over, The Word Is ${randomValueValue}`)
   } else {
     document.getElementById("Winner").play()
-    divText = document.createTextNode(`We Have a Winner`)
+    divText = document.createTextNode(`We Have a Winner, The Word Is ${randomValueValue}`)
   }
 
   div.appendChild(divText)
